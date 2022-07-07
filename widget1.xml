@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2022-07-06 11:25:25">
+<sp_widget action="INSERT_OR_UPDATE">
+<category>custom</category>
+<client_script><![CDATA[api.controller=function($scope,$rootScope) {
+  /* widget controller */
+  var c = this;
+$scope.info = JSON.parse(c.data.info);
+	$scope.data= $scope.info.data;
+	
+	
+	 $rootScope.$on('pageNumberChanged',function(event,data){
+		c.data.pageNumber= data;
+
+		 c.data.action= 'updated';
+		 console.log('123',c.data.pageNumber)
+		 c.server.update().then(function(){
+			 c.data.action= undefined;
+			 c.data.pageNumber= '';
+			 console.log('#####')
+		 });
+	});
+};]]></client_script>
+<controller_as>c</controller_as>
+<css>.chi-card{
+font-size: 16px;
+}</css>
+<data_table>sp_instance</data_table>
+<demo_data/>
+<description/>
+<docs display_value=""/>
+<field_list/>
+<has_preview>false</has_preview>
+<id>fact_items</id>
+<internal>false</internal>
+<link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+<name>factlist</name>
+<option_schema/>
+<public>false</public>
+<roles/>
+<script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+// 	var r = new sn_ws.RESTMessageV2('sample-get-request','facts');
+
+// var response = r.execute();
+
+// var responseBody = response.getBody();
+// 	gs.log(responseBody);
+// data.response  = responseBody;
+	data.pageNumber = 1;
+	function fetchData(){
+		var request = new sn_ws.RESTMessageV2();
+			request.setEndpoint('https://reqres.in/api/users?page='+data.pageNumber);
+			request.setHttpMethod('GET');
+	
+	request.setRequestHeader("Accept","application/json");
+request.setRequestHeader('User-Agent','telnet');
+	var response = request.execute();
+		var responseBody = response.getBody();
+	
+data.info  = responseBody; 
+		
+	}
+	fetchData();
+	
+	if(input &&  input.data.action=='updated'){
+gs.addInfoMessage('inside input',input)
+// 		if(data.action=='updated'){
+// 			data.pageNumber = input.pageNumber;
+// // 			fetchData();
+// 			alert(123);
+// 		}
+	}
+	
+// 	if
+// 	gs.info(JSON.stringify( JSON.parse(response.getBody()), null, 4));
+
+})();]]></script>
+<servicenow>false</servicenow>
+<sys_class_name>sp_widget</sys_class_name>
+<sys_created_by>AC77372</sys_created_by>
+<sys_created_on>2022-07-04 05:59:34</sys_created_on>
+<sys_id>16993ce487689d10c2f8639d0ebb357d</sys_id>
+<sys_mod_count>66</sys_mod_count>
+<sys_name>factlist</sys_name>
+<sys_package display_value="admincontrolcenter" source="x_twte2_admincon_0">4b12b1d687b7c950e44997983cbb3557</sys_package>
+<sys_policy/>
+<sys_scope display_value="admincontrolcenter">4b12b1d687b7c950e44997983cbb3557</sys_scope>
+<sys_update_name>sp_widget_16993ce487689d10c2f8639d0ebb357d</sys_update_name>
+<sys_updated_by>AC77372</sys_updated_by>
+<sys_updated_on>2022-07-05 13:52:38</sys_updated_on>
+<template><![CDATA[<div class="chi-card">
+  <div class="chi-card__content">
+    
+
+  <table class="chi-table">
+    <tr>
+        <th>ID</th>
+        <th>Email</th>
+       <th>First Name</th>
+       <th>Last Name</th>
+    </tr>
+    <tr ng-repeat="items in data track by $index">
+        <td>{{items.id}}</td> 
+        <td>{{items.email}}</td> 
+      <td>{{items.first_name}}</td> 
+      <td>{{items.last_name}}</td>
+    </tr> 
+  </table>
+  </div>
+</div>
+
+]]></template>
+</sp_widget>
+</unload>
