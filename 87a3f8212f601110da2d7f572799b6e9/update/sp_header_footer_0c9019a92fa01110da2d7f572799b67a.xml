@@ -35,21 +35,20 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-07-07 10:08:29</sys_created_on>
         <sys_id>0c9019a92fa01110da2d7f572799b67a</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>copy widget</sys_name>
         <sys_package display_value="ccma-snow" source="x_837278_ccma_snow">87a3f8212f601110da2d7f572799b6e9</sys_package>
         <sys_policy/>
         <sys_scope display_value="ccma-snow">87a3f8212f601110da2d7f572799b6e9</sys_scope>
         <sys_update_name>sp_header_footer_0c9019a92fa01110da2d7f572799b67a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-07 10:09:53</sys_updated_on>
+        <sys_updated_on>2022-07-07 10:25:03</sys_updated_on>
         <template><![CDATA[<link rel="icon" type="image/svg+xml" href="https://assets.ctl.io/chi/5.11.0/assets/themes/lumen/images/favicon.svg" integrity="sha256-s8cfYbPxhcrLj+FL/OxALhZoDmlCwvX2/K3I0hq1PAs=" crossorigin="anonymous">
 <link rel="alternate icon" href="https://assets.ctl.io/chi/5.4.0/assets/themes/lumen/images/favicon.ico" integrity="sha256-EkKmbH+i/VIQAtUl7NF4bPVaaJZCeBc5xWx8LTcMJp0=" crossorigin="anonymous">
 
 <!--<link rel="stylesheet" href="chi_design_system_misc.css">-->
 <!--<script type="module" src="https://assets.ctl.io/chi/5.4.0/js/ce/ux-chi-ce/ux-chi-ce.esm.js" integrity="sha256-6xeD+jXm3b1dhiWdzcMSz84GlP0Z9gnIdfjNEKIQ844=" crossorigin="anonymous"></script><script nomodule="" src="https://assets.ctl.io/chi/5.4.0/js/ce/ux-chi-ce/ux-chi-ce.js" integrity="sha256-YrDiIH91dWgnfQRTLsWYoxQj7LGxf7PHV4TIZcazh5M=" crossorigin="anonymous"></script>-->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 ]]></template>
     </sp_header_footer>
 </record_update>
